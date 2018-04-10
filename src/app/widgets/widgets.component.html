@@ -1,0 +1,6 @@
+<h1>Widgets Ya'all</h1>
+<input mdInput placeholder="Description" [(ngModel)]="color" type="text" name="">
+<a [href]="link">
+  <h2 [style.color]="color">{{color}}</h2>
+</a>
+<button type="button" md-button (click)="echo(link)">Holla</button>
