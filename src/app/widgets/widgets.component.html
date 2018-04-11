@@ -13,7 +13,7 @@
           <h1>Widgets</h1>
         </md-card-title>
       </md-card-header>
-      <md-card-content [(ngModel)]="widgets">
+      <md-card-content>
         <md-list>
           <md-list-item *ngFor="let wid of widgets" (click)="selectwidget(wid)">
             <h3 md-line>
@@ -36,19 +36,29 @@
   <div class="col-50">
     <md-card>
       <md-card-header>
-        <md-card-title><h1>Select a Widget</h1>
+        <md-card-title>
+          <h1>
+            <span *ngIf="selectedwidgets; else prompto">
+              Editing {{ selectedwidgets.name }}
+            </span>
+            <ng-template #prompto>
+              Create
+            </ng-template>
+          </h1>
         </md-card-title>
       </md-card-header>
       <form>
         <md-card-content>
-          <pre>{{selectedwidgets | json}}</pre>
+          <pre>{{ selectedwidgets | json}}</pre>
         </md-card-content>
         <md-card-actions>
           <button type="submit" md-button>Save</button>
-          <button type="button" md-button>Cancel</button>
+          <button type="button" md-button (click)="selectwidget(null)">Cancel</button>
         </md-card-actions>
       </form>
     </md-card>
-
+    <md-card *ngFor="let testwidget of widgets; let i=index">
+      <h4> {{ i }}  {{ testwidget.name }} </h4>
+    </md-card>
   </div>
 </div>

@@ -7,6 +7,7 @@ import { Component, OnInit , } from '@angular/core';
 })
 export class WidgetsComponent implements OnInit {
   selectedwidgets;
+
   widgets = [
     {
       id: 1,
