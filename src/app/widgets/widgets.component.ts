@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , } from '@angular/core';
 
 @Component({
   selector: 'app-widgets',
@@ -49,7 +49,7 @@ export class WidgetsComponent implements OnInit {
   ngOnInit() {
 
   }
-  selectwidget(widget){
+  selectwidget(widget) {
     this.selectedwidgets = widget;
   }
 

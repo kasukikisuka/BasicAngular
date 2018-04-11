@@ -1,7 +1,7 @@
 <!--<h1>Widgets Ya'all</h1>-->
 <!--<input mdInput placeholder="Description" [(ngModel)]="color" type="text" name="">-->
 <!--<a [href]="link">-->
-  <!--<h2 [style.color]="color">{{color}}</h2>-->
+<!--<h2 [style.color]="color">{{color}}</h2>-->
 <!--</a>-->
 <!--<button type="button" md-button (click)="echo(link)">Holla</button>-->
 <div class="container">
@@ -13,15 +13,17 @@
           <h1>Widgets</h1>
         </md-card-title>
       </md-card-header>
-      <md-card-content>
+      <md-card-content [(ngModel)]="widgets">
         <md-list>
-          <md-list-item>
-            <h3 md-line>WIDGET NAME</h3>
+          <md-list-item *ngFor="let wid of widgets" (click)="selectwidget(wid)">
+            <h3 md-line>
+              {{ wid.name }}
+            </h3>
             <button md-icon-button>
               <md-icon>close</md-icon>
             </button>
             <p md-line>
-              WIDGET DESCRIPTION
+              {{ wid.description }}
             </p>
           </md-list-item>
         </md-list>
@@ -34,14 +36,12 @@
   <div class="col-50">
     <md-card>
       <md-card-header>
-        <md-card-title>
-          <h1>
-            Select a Widget
-          </h1>
+        <md-card-title><h1>Select a Widget</h1>
         </md-card-title>
       </md-card-header>
       <form>
         <md-card-content>
+          <pre>{{selectedwidgets | json}}</pre>
         </md-card-content>
         <md-card-actions>
           <button type="submit" md-button>Save</button>
@@ -49,5 +49,6 @@
         </md-card-actions>
       </form>
     </md-card>
+
   </div>
 </div>
