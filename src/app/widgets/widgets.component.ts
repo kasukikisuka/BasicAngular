@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./widgets.component.css']
 })
 export class WidgetsComponent implements OnInit {
-    jSonfile = [
+  list = [1, 2, 3, 4, 5];
+  jSonfile = [
     {
       id: 1,
       name: 'Red Widget',

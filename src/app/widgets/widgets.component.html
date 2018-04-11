@@ -43,7 +43,8 @@
       </md-card-header>
       <form>
         <md-card-content>
-          SELECTED WIDGET DETAILS
+          <!--{{ selectedWidgets | json}}-->
+          <p *ngFor="let coco of list">{{coco}}</p>
         </md-card-content>
         <md-card-actions>
           <button type="submit" md-button>Save</button>
