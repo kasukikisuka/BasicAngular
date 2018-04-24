@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Item } from '../../shared';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Item} from '../../shared';
 
 @Component({
   selector: 'app-item-detail',
@@ -12,8 +12,10 @@ export class ItemDetailComponent {
   @Output() saved = new EventEmitter();
   @Output() cancelled = new EventEmitter();
 
-  @Input() set item(value: Item){
-    if (value) { this.originalName = value.name; }
+  @Input() set item(value: Item) {
+    if (value) {
+      this.originalName = value.name;
+    }
     this.selectedItem = Object.assign({}, value);
   }
 }
