@@ -1,5 +1,5 @@
 import { Component, OnInit , } from '@angular/core';
-import {WidgetsService} from '../shared';
+import {Widget, WidgetsService} from '../shared';
 
 @Component({
   selector: 'app-widgets',
@@ -7,16 +7,21 @@ import {WidgetsService} from '../shared';
   styleUrls: ['./widgets.component.css']
 })
 export class WidgetsComponent implements OnInit {
-  selectedwidgets;
-  widgets;
+  selectedWidgets: Widget;
+  widgets: Array<Widget>;
+  widgetList: Widget[];
+
   constructor(private widgetsService: WidgetsService) { }
 
   ngOnInit() {
   this.widgets = this.widgetsService.widgets;
+  if (!this.widgets) {
+    this.widgets.push({id: 13, description: 'aaaa', name: 'aaaaa'})
+  }
   }
 
-  selectwidget(widget) {
-    this.selectedwidgets = widget;
+  selectWidget(widget) {
+    this.selectedWidgets = widget;
   }
 
 }
