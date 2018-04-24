@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class CaffeineService {
-  sourse = [
+  sources = [
     'red blue',
     'monster',
     'rock star',

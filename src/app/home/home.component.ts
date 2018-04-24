@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemsService } from '../shared/items.service';
-import { Item } from '../shared/item.model';
+import { ItemsService } from '../shared';
+import { Item } from '../shared';
 import {CaffeineService} from '../shared';
 
 @Component({
@@ -11,13 +11,13 @@ import {CaffeineService} from '../shared';
 })
 export class HomeComponent implements OnInit {
   items: Item[];
-  sourse;
+  sources;
 
   constructor(private itemsService: ItemsService, private caffeineService: CaffeineService) { }
 
   ngOnInit() {
     this.getItems();
-    this.sourse = this.caffeineService.sourse;
+    this.sources = this.caffeineService.sources;
   }
 
   getItems() {
