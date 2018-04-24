@@ -35,7 +35,7 @@ import { WidgetsComponent } from './widgets/widgets.component';
     AppRoutingModule,
     AppMaterialModule
   ],
-  providers: [ItemsService, CaffeineService],
+  providers: [ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
