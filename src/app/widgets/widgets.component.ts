@@ -1,4 +1,4 @@
-import { Component, OnInit , } from '@angular/core';
+import {Component, OnInit,} from '@angular/core';
 import {Widget, WidgetsService} from '../shared';
 
 @Component({
@@ -11,13 +11,14 @@ export class WidgetsComponent implements OnInit {
   widgets: Array<Widget>;
   widgetList: Widget[];
 
-  constructor(private widgetsService: WidgetsService) { }
+  constructor(private widgetsService: WidgetsService) {
+  }
 
   ngOnInit() {
-  this.widgets = this.widgetsService.widgets;
-  if (!this.widgets) {
-    this.widgets.push({id: 13, description: 'aaaa', name: 'aaaaa'})
-  }
+    this.widgets = this.widgetsService.widgets;
+    if (!this.widgets) {
+      this.widgets.push({id: 13, description: 'aaaa', name: 'aaaaa'});
+    }
   }
 
   selectWidget(widget) {
